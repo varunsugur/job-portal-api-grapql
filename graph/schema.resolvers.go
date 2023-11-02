@@ -19,6 +19,11 @@ func (r *mutationResolver) CreatCompany(ctx context.Context, input model.NewComp
 	return r.Svc.CreatCompany(input)
 }
 
+// CreatJob is the resolver for the CreatJob field.
+func (r *mutationResolver) CreatJob(ctx context.Context, input model.NewJob) (*model.Job, error) {
+	return r.Svc.CreatJob(input)
+}
+
 // ViewCompanyByID is the resolver for the ViewCompanyById field.
 func (r *queryResolver) ViewCompanyByID(ctx context.Context, cid string) (*model.Company, error) {
 	return r.Svc.ViewCompanyById(cid)
@@ -27,6 +32,21 @@ func (r *queryResolver) ViewCompanyByID(ctx context.Context, cid string) (*model
 // ViewAllCompany is the resolver for the ViewAllCompany field.
 func (r *queryResolver) ViewAllCompany(ctx context.Context) ([]*model.Company, error) {
 	return r.Svc.ViewAllcompany()
+}
+
+// ViewJobByID is the resolver for the ViewJobById field.
+func (r *queryResolver) ViewJobByID(ctx context.Context, id string) (*model.Job, error) {
+	return r.Svc.ViewJobById(id)
+}
+
+// ViewJobByCid is the resolver for the ViewJobByCid field.
+func (r *queryResolver) ViewJobByCid(ctx context.Context, cid string) ([]*model.Job, error) {
+	return r.Svc.ViewJobByCid(cid)
+}
+
+// ViewAllJobs is the resolver for the ViewAllJobs field.
+func (r *queryResolver) ViewAllJobs(ctx context.Context) ([]*model.Job, error) {
+	return r.Svc.ViewAllJobs()
 }
 
 // Mutation returns MutationResolver implementation.

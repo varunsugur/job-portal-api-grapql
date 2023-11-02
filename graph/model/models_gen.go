@@ -9,10 +9,23 @@ type Company struct {
 	Salary   string `json:"salary"`
 }
 
+type Job struct {
+	ID     string `json:"id"`
+	Cid    string `json:"cid"`
+	Role   string `json:"role"`
+	Salary string `json:"salary"`
+}
+
 type NewCompany struct {
 	Name     string `json:"name"`
 	Location string `json:"location"`
 	Salary   string `json:"salary"`
+}
+
+type NewJob struct {
+	Cid    string `json:"cid"`
+	Role   string `json:"role"`
+	Salary string `json:"salary"`
 }
 
 type NewUser struct {
